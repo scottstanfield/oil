@@ -1,6 +1,9 @@
-# oil
+# Hormuz Traffic and Brent Oil Visualizer
 
-Daily time-series tracker for Strait of Hormuz tanker traffic and the Brent **Dated-to-Frontline spread** — physical Brent (Dated) minus front-month future (1st Line). A widening positive spread is the classic supply-shock signature: physical barrels bid up relative to paper.
+Daily time-series tracker for Strait of Hormuz tanker traffic and the
+Brent **Dated-to-Frontline spread** — physical Brent (Dated) minus
+front-month future (1st Line). A widening positive spread is the classic
+supply-shock signature: physical barrels bid up relative to paper.
 
 Stack: a single DuckDB file, a bash updater, and a small Bun-installed Node server with two synced [uPlot](https://github.com/leeoniya/uPlot) charts.
 
@@ -9,6 +12,10 @@ https://youtu.be/wWSnAmL3C7Y?si=29-TmVaejtVzpC0M&t=775
 
 And sent to Google Gemini Pro 1.5 for processing by hand.
 `This is close to a daily tracker of ship data transiting straight of hormuz. The x axis is the date, using a mix of formats (DD/MM/YYYY) and DD-MMM-YY. And the X axis labels are diagonal. The stacked bar chart has two dimensions: eastbound and westbound traffic. I want a CSV file with one row per day, with two columns, one for eastbound and other for westbound. The Maximum looks like 135 when both are combined. Minimum is near 0. I don't care about the 3 lines of text at the bottom.`
+
+Future version will pull from UKMTO JMIC advisories
+https://www.ukmto.org/partner-products/jmic-products/jmic-advisories/2026
+
 
 
 
