@@ -83,7 +83,7 @@ CREATE OR REPLACE TEMP TABLE yahoo_stage AS
   FROM read_csv('$TMP/yahoo.tsv', delim='\t', header=false, columns={'column0':'VARCHAR','column1':'VARCHAR'});
 
 CREATE OR REPLACE TEMP TABLE tanker_stage AS
-  SELECT Date::DATE AS date, Value_Blue::INTEGER AS tankers_out
+  SELECT date::DATE AS date, (eastbound + westbound)::INTEGER AS tankers_out
   FROM read_csv_auto('transit_data.csv');
 
 INSERT INTO daily (date, dated_brent, brent_1m, spread, tankers_out, updated_at)

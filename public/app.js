@@ -27,7 +27,7 @@ function destroy() {
 function render(xs, data) {
   destroy();
 
-  const cursor = { sync: { key: SYNC_KEY, setSeries: true } };
+  const cursor = { sync: { key: SYNC_KEY, setSeries: false } };
   const priceWidth  = document.getElementById('prices').clientWidth;
   const tankerWidth = document.getElementById('tankers').clientWidth;
 
@@ -51,7 +51,7 @@ function render(xs, data) {
   }, [xs, data.dated_brent, data.brent_1m, data.spread], document.getElementById('prices'));
 
   tankerChart = new uPlot({
-    title: 'Strait of Hormuz — daily tanker transits (Value_Blue)',
+    title: 'Strait of Hormuz — daily tanker transits (eastbound + westbound)',
     width: tankerWidth,
     height: 220,
     cursor,
