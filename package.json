@@ -1,0 +1,13 @@
+{
+  "name": "oil",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "update": "bash bin/update.sh"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "^1.4.0-r.0",
+    "uplot": "^1.6.31"
+  }
+}

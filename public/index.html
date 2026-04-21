@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hormuz / Brent Tracker</title>
+  <link rel="stylesheet" href="/uplot.css">
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; max-width: 1100px; margin: 24px auto; padding: 0 16px; color: #111; }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    p.sub { margin: 0 0 12px; color: #555; font-size: 13px; }
+    .controls { margin: 12px 0; display: flex; gap: 6px; align-items: center; font-size: 13px; }
+    button { padding: 4px 10px; border: 1px solid #bbb; background: #f7f7f7; cursor: pointer; border-radius: 3px; font: inherit; }
+    button.active { background: #222; color: #fff; border-color: #222; }
+    .chart { margin-bottom: 12px; }
+    footer { margin-top: 20px; font-size: 12px; color: #666; line-height: 1.5; }
+    code { background: #eee; padding: 1px 4px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <h1>Strait of Hormuz — Brent Dated-to-Frontline Tracker</h1>
+  <p class="sub">Spread = Dated Brent (physical) − Brent 1st Line (front-month future). Widening = physical premium = supply-shock signature.</p>
+  <div class="controls">
+    <span>Range:</span>
+    <button data-range="30d">30d</button>
+    <button data-range="90d" class="active">90d</button>
+    <button data-range="1y">1y</button>
+    <button data-range="all">All</button>
+  </div>
+  <div id="prices" class="chart"></div>
+  <div id="tankers" class="chart"></div>
+  <footer>
+    Sources: EIA series <code>PET.RBRTE.D</code> (Europe Brent Spot FOB; close proxy for the Platts Dated Brent assessment, not identical), Yahoo Finance <code>BZ=F</code> (ICE Brent front-month continuous future, daily close).
+    Tanker counts from local <code>transit_data.csv</code> (column <code>Value_Blue</code>, 2026-02-01 → 2026-04-07).
+  </footer>
+  <script src="/uplot.iife.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

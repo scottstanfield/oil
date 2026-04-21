@@ -1,0 +1,6 @@
+node_modules/
+data/
+.env
+bun.lockb
+.DS_Store
+.claude/
